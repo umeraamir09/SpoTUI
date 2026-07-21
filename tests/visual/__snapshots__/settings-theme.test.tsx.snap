@@ -1,0 +1,51 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`theme settings frames 90x26 1`] = `
+" SpoTUI ·                                                                                 
+                                                                                          
+──────────────────────────────────────────────────────────────────────────────────────────
+                                                                                          
+                                                                                          
+                                                                                          
+              THEME SETTINGS                                                              
+              Select a preset to preview it live. Apply saves it for future               
+              launches.                                                                   
+               > WARM-PHOSPHOR  SAVED                                                     
+                 Amber studio receiver                                                    
+                                                                                          
+                 MIDNIGHT-BLUE                                                            
+                 Cool nocturnal console                                                   
+                                                                                          
+                 FOREST-TERMINAL                                                          
+                 Deep green listening room                                                
+                                                                                          
+                 ROSEWAVE                                                                 
+                 Magenta late-night signal                                                
+                                                                                          
+                                                                    ┌─┐ ┌──┐              
+              PREVIEW UPDATES IMMEDIATELY                           │X│ │OK│              
+                                                                    └─┘ └──┘              
+                                                                                          
+                                                                                          
+"
+`;
+
+exports[`theme settings frames 52x16 1`] = `
+" SpoTUI ·                                           
+                                                    
+────────────────────────────────────────────────────
+                                                    
+                                                    
+ THEME SETTINGS                                     
+ Up/Down preview · Enter apply · Esc cancel         
+  > WARM-PHOSPHOR  SAVED                            
+    MIDNIGHT-BLUE                                   
+    FOREST-TERMINAL                                 
+    ROSEWAVE                                        
+                                           ┌─┐ ┌──┐ 
+ PREVIEW UPDATES IMMEDIATELY               │X│ │OK│ 
+                                           └─┘ └──┘ 
+                                                    
+                                                    
+"
+`;

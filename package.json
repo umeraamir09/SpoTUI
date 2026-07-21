@@ -1,0 +1,59 @@
+{
+  "name": "umroofm",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "A warm retro terminal remote controller for Spotify Connect.",
+  "bin": {
+    "umroofm": "./src/index.tsx"
+  },
+  "files": [
+    "src/",
+    "bin/",
+    "!src/**/*.test.ts",
+    "!src/**/*.test.tsx",
+    "!src/**/*.spec.ts",
+    "!src/**/*.spec.tsx"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "start": "bun src/index.tsx",
+    "dev": "bun --watch src/index.tsx",
+    "build": "bun run scripts/build.ts",
+    "build:win": "bun build --compile --target=bun-windows-x64 ./src/index.tsx --outfile dist/umroofm-win-x64 --minify",
+    "build:mac-arm": "bun build --compile --target=bun-darwin-arm64 ./src/index.tsx --outfile dist/umroofm-darwin-arm64 --minify",
+    "build:mac-x64": "bun build --compile --target=bun-darwin-x64 ./src/index.tsx --outfile dist/umroofm-darwin-x64 --minify",
+    "build:linux-x64": "bun build --compile --target=bun-linux-x64 ./src/index.tsx --outfile dist/umroofm-linux-x64 --minify",
+    "build:linux-arm64": "bun build --compile --target=bun-linux-arm64 ./src/index.tsx --outfile dist/umroofm-linux-arm64 --minify",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings 0",
+    "test": "bun test",
+    "test:unit": "bun test tests/unit",
+    "test:integration": "bun test tests/integration",
+    "test:visual": "bun test tests/visual",
+    "validate": "bun run typecheck && bun run lint && bun run test:unit && bun run test:integration && bun run test:visual",
+    "prepublishOnly": "bun run validate"
+  },
+  "engines": {
+    "bun": ">=1.2.0"
+  },
+  "dependencies": {
+    "@opentui/core": "^0.4.5",
+    "@opentui/keymap": "^0.4.5",
+    "@opentui/react": "^0.4.5",
+    "jpeg-js": "^0.4.4",
+    "pngjs": "^7.0.0",
+    "react": "^19.2.7",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/bun": "^1.3.14",
+    "@types/pngjs": "^6.0.5",
+    "@types/react": "^19.2.17",
+    "eslint": "^10.7.0",
+    "typescript": "6.0.2",
+    "typescript-eslint": "^8.64.0"
+  }
+}

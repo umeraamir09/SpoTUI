@@ -1,0 +1,155 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`empty player shell frames 140x40 1`] = `
+" SpoTUI ·                                                                                                                                   
+                                                                                                                              KEYS   THEME  
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                                                            
+                                                                [QUEUE] [LYRICS] [INFO] [DEVICE]  / QUEUE                                   
+                                                                Queue is empty. Press u to view or refresh it.                              
+                                                                                                                                            
+                                                                                                                                            
+                                                                                                                                            
+                                                                                                                                            
+                                                                                                                                            
+                                                                                                                                            
+                                                                                                                                            
+                                                                                                                                            
+                                                                                                                                            
+                                                                                                                                            
+                                                                                                                                            
+                         .----------.                                                                                                       
+                      .-'////////////'-.                                                                                                    
+                    / //// //////// //// \\                                                   NOTHING PLAYING                                
+                   | /////////.///////// |                                                                                                  
+                    \\ //// //////// //// /                                              Device ready: Desk Speaker                          
+                      '-.////////////.-'                                                                                                    
+                         '----------'                                      Start playback in Spotify, then UmrooFM will follow.             
+                                                                                                                                            
+                                                                                                                                            
+                                                                                                                                            
+                                                                                                                                            
+                                                                                                                                            
+                                                                                                                                            
+                                                                                                                                            
+                                                                                                                                            
+                                                                                                                                            
+                                                                                                                                            
+                                                                                                                                            
+                                                                                                                                            
+                                                                                                                                            
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ device: Desk Speaker · / search · u queue · b library · d devices · q quit                                      ◆ FOCUS TRANSPORT / PAUSED 
+                                                                                                                                            
+"
+`;
+
+exports[`empty player shell frames 110x30 1`] = `
+" SpoTUI ·                                                                                                     
+                                                                                                KEYS   THEME  
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                              
+                                                   [QUEUE] [LYRICS] [INFO] [DEVICE]  / QUEUE                  
+                                                   Queue is empty. Press u to view or refresh it.             
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                   .----------.                                                                               
+                .-'////////////'-.                                                                            
+              / //// //////// //// \\                                    NOTHING PLAYING                       
+             | /////////.///////// |                                                                          
+              \\ //// //////// //// /                              Device ready: Desk Speaker                  
+                '-.////////////.-'                                                                            
+                   '----------'                      Start playback in Spotify, then UmrooFM will follow.     
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                                                                                                              
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ device: Desk Speaker · / search · u queue · b library · d devices · q quit        ◆ FOCUS TRANSPORT / PAUSED 
+                                                                                                              
+"
+`;
+
+exports[`empty player shell frames 90x26 1`] = `
+" SpoTUI ·                                                                                 
+                                                                            KEYS   THEME  
+──────────────────────────────────────────────────────────────────────────────────────────
+                                                                                          
+                                    [QUEUE] [LYRICS] [INFO] [DEVICE]  / QUEUE             
+                                    Queue is empty. Press u to view or refresh it.        
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+            .----------.                                                                  
+         .-'////////////'-.                           NOTHING PLAYING                     
+       / //// //////// //// \\                                                             
+      | /////////.///////// |                   Device ready: Desk Speaker                
+       \\ //// //////// //// /                                                             
+         '-.////////////.-'            Start playback in Spotify, then UmrooFM will       
+            '----------'               follow.                                            
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+──────────────────────────────────────────────────────────────────────────────────────────
+ / search · u queue · b library · d device                     ◆ FOCUS TRANSPORT / PAUSED 
+                                                                                          
+"
+`;
+
+exports[`empty player shell frames 72x22 1`] = `
+" SpoTUI ·                                                               
+                                                          KEYS   THEME  
+────────────────────────────────────────────────────────────────────────
+                                                                        
+  ( ///./// )                                                           
+              COMPACT VINYL                                             
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                            NOTHING PLAYING                             
+                       Device ready: Desk Speaker                       
+          Start playback in Spotify, then UmrooFM will follow.          
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+  Queue is empty. Press u to view or refresh it.                        
+                                                                        
+────────────────────────────────────────────────────────────────────────
+ / FIND  U QUEUE  B LIB                      ◆ FOCUS TRANSPORT / PAUSED 
+                                                                        
+"
+`;
+
+exports[`empty player shell frames 52x16 1`] = `
+" SpoTUI ·                                           
+                                      KEYS   THEME  
+────────────────────────────────────────────────────
+ ( ///./// ) COMPACT VINYL                          
+                                                    
+                                                    
+                  NOTHING PLAYING                   
+             Device ready: Desk Speaker             
+   Start playback in Spotify, then UmrooFM will     
+   follow.                                          
+                                                    
+                                                    
+  Queue is empty. Press u to view or refresh it.    
+────────────────────────────────────────────────────
+ / FIND  U QUEUE  B LIB  ◆ FOCUS TRANSPORT / PAUSED 
+                                                    
+"
+`;

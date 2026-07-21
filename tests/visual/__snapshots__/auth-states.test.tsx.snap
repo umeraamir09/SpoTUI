@@ -1,0 +1,121 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`Phase 1 authorization frames first-run 1`] = `
+" SpoTUI ·                                                                                 
+                                                                                          
+──────────────────────────────────────────────────────────────────────────────────────────
+                                                                                          
+                                                                                          
+      ┌────────────────────────────────────────────────────────────────────────────┐      
+      │                                                                            │      
+      │  BRING YOUR OWN SPOTIFY CLIENT ID                                          │      
+      │  Create a Spotify app, then register this redirect URI:                    │      
+      │  http://127.0.0.1/callback                                                 │      
+      │                                                                            │      
+      │  Dashboard URI: no port. UmrooFM adds a dynamic port during login.         │      
+      │  Paste the app's Client ID below. It is saved in your UmrooFM config;      │      
+      │  tokens are stored separately in the OS credential store.                  │      
+      │                                                                            │      
+      │  ┌──────────────────────────────────────────────────────────────────────┐  │      
+      │  │ Spotify Client ID                                                    │  │      
+      │  └──────────────────────────────────────────────────────────────────────┘  │      
+      │  Press Enter to save the Client ID.                                        │      
+      │                                                                            │      
+      └────────────────────────────────────────────────────────────────────────────┘      
+                                                                                          
+                                                                                          
+──────────────────────────────────────────────────────────────────────────────────────────
+ input active / Enter save / Ctrl+C exit                           SPOTIFY WEB API REMOTE 
+                                                                                          
+"
+`;
+
+exports[`Phase 1 authorization frames ready 1`] = `
+" SpoTUI ·                                                                                 
+                                                                                          
+──────────────────────────────────────────────────────────────────────────────────────────
+                                                                                          
+                                                                                          
+      ┌────────────────────────────────────────────────────────────────────────────┐      
+      │                                                                            │      
+      │  CONNECT YOUR SPOTIFY ACCOUNT                                              │      
+      │  Press Enter to authorize UmrooFM in your browser.                         │      
+      │                                                                            │      
+      │  Register this redirect URI in your Spotify app:                           │      
+      │                                                                            │      
+      │  http://127.0.0.1/callback                                                 │      
+      │  Spotify permits the app to add a dynamic port to this loopback IP         │      
+      │  during authorization.                                                     │      
+      │                                                                            │      
+      │  Development Mode requires the app owner to have Spotify Premium and       │      
+      │  supports up to five allowlisted users.                                    │      
+      │  Client ID source: config                                                  │      
+      │                                                                            │      
+      └────────────────────────────────────────────────────────────────────────────┘      
+                                                                                          
+                                                                                          
+──────────────────────────────────────────────────────────────────────────────────────────
+ Enter continue / q quit / Ctrl+C exit                             SPOTIFY WEB API REMOTE 
+                                                                                          
+"
+`;
+
+exports[`Phase 1 authorization frames authorizing 1`] = `
+" SpoTUI ·                                                                                 
+                                                                                          
+──────────────────────────────────────────────────────────────────────────────────────────
+                                                                                          
+                                                                                          
+                                                                                          
+      ┌────────────────────────────────────────────────────────────────────────────┐      
+      │                                                                            │      
+      │  WAITING FOR SPOTIFY                                                       │      
+      │                                                                            │      
+      │  Complete authorization in the browser window.                             │      
+      │                                                                            │      
+      │  The callback listens only on 127.0.0.1 and closes when this attempt       │      
+      │  finishes.                                                                 │      
+      │                                                                            │      
+      │  Active callback: http://127.0.0.1:43123/callback                          │      
+      │                                                                            │      
+      │  Press Esc to cancel this authorization attempt.                           │      
+      │                                                                            │      
+      └────────────────────────────────────────────────────────────────────────────┘      
+                                                                                          
+                                                                                          
+                                                                                          
+──────────────────────────────────────────────────────────────────────────────────────────
+ browser authorization / Esc cancel / Ctrl+C exit                  SPOTIFY WEB API REMOTE 
+                                                                                          
+"
+`;
+
+exports[`Phase 1 authorization frames error 1`] = `
+" SpoTUI ·                                                                                 
+                                                                                          
+──────────────────────────────────────────────────────────────────────────────────────────
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+      ┌────────────────────────────────────────────────────────────────────────────┐      
+      │                                                                            │      
+      │  SPOTIFY CONNECTION FAILED                                                 │      
+      │                                                                            │      
+      │  Spotify authorization was denied. You can retry when ready.               │      
+      │                                                                            │      
+      │  Press Enter to retry, or q to quit.                                       │      
+      │                                                                            │      
+      └────────────────────────────────────────────────────────────────────────────┘      
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+──────────────────────────────────────────────────────────────────────────────────────────
+ Enter continue / q quit / Ctrl+C exit                             SPOTIFY WEB API REMOTE 
+                                                                                          
+"
+`;

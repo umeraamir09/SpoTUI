@@ -1,0 +1,181 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`Phase 4 discovery frames search 90x26 1`] = `
+"                                                                                          
+ SpoTUI ·                                                                                 
+   PLAYER   BROWSE > SEARCH   LIBRARY   QUEUE   DEVICES                                   
+──────────────────────────────────────────────────────────────────────────────────────────
+                                                                                          
+ ┌──────────────────────────────────────────────────────────────────────────────────────┐ 
+ │                                                                                      │ 
+ │                                                                                      │ 
+ │ SEARCH SPOTIFY TRACKS                                                   TRACK SEARCH │ 
+ │                                                                                      │ 
+ │ ┌──────────────────────────────────────────────────────────────────────────────────┐ │ 
+ │ │ catalog                                                                          │ │ 
+ │ └──────────────────────────────────────────────────────────────────────────────────┘ │ 
+ │ Type to search; Down opens results; Esc closes                                       │ 
+ │ 1 track(s) on this page                                                              │ 
+ │    Catalog Receiver                Search Unit           Signals Fo…    3:21         │ 
+ │ ┌─────┐ ┌────┐ ┌────────┐ ┌───────┐                                                  │ 
+ │ │QUEUE│ │LIKE│ │PLAYLIST│ │SPOTIFY│                                                  │ 
+ │ └─────┘ └────┘ └────────┘ └───────┘                                                  │ 
+ │ Page 1; 1 result(s)                                                                  │ 
+ │                                                                                      │ 
+ └──────────────────────────────────────────────────────────────────────────────────────┘ 
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+"
+`;
+
+exports[`Phase 4 discovery frames search 52x16 1`] = `
+" SpoTUI ·                                           
+                                                    
+────────────────────────────────────────────────────
+┌──────────────────────────────────────────────────┐
+│                                                  │
+│ SEARCH SPOTIFY TRACKS               TRACK SEARCH │
+│ ┌──────────────────────────────────────────────┐ │
+│ │ catalog                                      │ │
+│ └──────────────────────────────────────────────┘ │
+│ Type to search; Down opens results; Esc closes   │
+│    Catalog Receiver               Search…    3:21│
+│ Page 1; 1 result(s)                              │
+│                                                  │
+└──────────────────────────────────────────────────┘
+                                                    
+                                                    
+"
+`;
+
+exports[`Phase 4 discovery frames browse 90x26 1`] = `
+"                                                                                          
+ SpoTUI ·                                                                                 
+   PLAYER > BROWSE   SEARCH   LIBRARY   QUEUE   DEVICES                                   
+──────────────────────────────────────────────────────────────────────────────────────────
+                                                                                          
+                                                                                          
+  BROWSE                                                                                  
+  Discover music from Spotify, starting with the tracks you want to hear.                 
+                                                                                          
+                                                                                          
+  ┌────────────────────────────────────────────────────────────────────────────────────┐  
+  │                                                                                    │  
+  │ CATALOG DISCOVERY                                                                  │  
+  │ This Spotify connection currently exposes track search, your library, queue, and   │  
+  │ devices. Featured and recommendation feeds are not available through this          │  
+  │ application yet.                                                                   │  
+  │                                                                                    │  
+  │ ┌──────────────┐                                                                   │  
+  │ │SEARCH SPOTIFY│                                                                   │  
+  │ └──────────────┘                                                                   │  
+  │                                                                                    │  
+  └────────────────────────────────────────────────────────────────────────────────────┘  
+                                                                                          
+  No unsupported recommendations or placeholder collections are shown.                    
+                                                                                          
+                                                                                          
+"
+`;
+
+exports[`Phase 4 discovery frames queue 90x26 1`] = `
+"                                                                                          
+ SpoTUI ·                                                                                 
+   PLAYER   BROWSE   SEARCH   LIBRARY > QUEUE   DEVICES                                   
+──────────────────────────────────────────────────────────────────────────────────────────
+                                                                                          
+ ┌──────────────────────────────────────────────────────────────────────────────────────┐ 
+ │                                                                                      │ 
+ │                                                                                  ┌─┐ │ 
+ │ PLAYBACK QUEUE                                                                   │↻│ │ 
+ │                                                                                  └─┘ │ 
+ │ ↑/↓ select · Enter play now · Esc close                                              │ 
+ │ NOW PLAYING                                                                          │ 
+ │    Catalog Receiver                Search Unit           Signals Fo…    3:21         │ 
+ │ UP NEXT                                                                              │ 
+ │  > Queued Transmission             Search Unit           Signals Fo…    3:21         │ 
+ │ Showing 1 queued item(s)                                                             │ 
+ │                                                                                      │ 
+ └──────────────────────────────────────────────────────────────────────────────────────┘ 
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+"
+`;
+
+exports[`Phase 4 discovery frames queue 52x16 1`] = `
+" SpoTUI ·                                           
+                                                    
+────────────────────────────────────────────────────
+┌──────────────────────────────────────────────────┐
+│                                                  │
+│                                              ┌─┐ │
+│ PLAYBACK QUEUE                               │↻│ │
+│                                              └─┘ │
+│ ↑/↓ select · Enter play now · Esc close          │
+│ NOW PLAYING                                      │
+│    Catalog Receiver           Search…    3:21    │
+│ UP NEXT                                          │
+│  > Queued Transmission        Search…    3:21    │
+│ Showing 1 queued item(s)                         │
+│                                                  │
+└──────────────────────────────────────────────────┘
+"
+`;
+
+exports[`Phase 4 discovery frames library 90x26 1`] = `
+"                                                                                          
+ SpoTUI ·                                                                                 
+   PLAYER   BROWSE   SEARCH > LIBRARY   QUEUE   DEVICES                                   
+──────────────────────────────────────────────────────────────────────────────────────────
+                                                                                          
+ ┌──────────────────────────────────────────────────────────────────────────────────────┐ 
+ │                                                                                      │ 
+ │                                                                                      │ 
+ │ SPOTIFY LIBRARY                                                                      │ 
+ │                                                                                      │ 
+ │ [ LIKED SONGS ]  [ PLAYLISTS ]                                                       │ 
+ │ ←/→ section · ↑/↓ select · Enter open/play · P play · PgUp/PgDn page                 │ 
+ │  > Catalog Receiver                Search Unit           Signals Fo…    3:21         │ 
+ │ Spotify Web API library · Esc close                                                  │ 
+ │                                                                                      │ 
+ └──────────────────────────────────────────────────────────────────────────────────────┘ 
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+"
+`;
+
+exports[`Phase 4 discovery frames library 52x16 1`] = `
+" SpoTUI ·                                           
+                                                    
+────────────────────────────────────────────────────
+┌──────────────────────────────────────────────────┐
+│                                                  │
+│                                                  │
+│ SPOTIFY LIBRARY                                  │
+│                                                  │
+│ [ LIKED SONGS ]  [ PLAYLISTS ]                   │
+│ ←/→ section · ↑/↓ select · Enter open/play · P   │
+│ play · PgUp/PgDn page                            │
+│  > Catalog Receiver           Search…    3:21    │
+│ Spotify Web API library · Esc close              │
+│                                                  │
+└──────────────────────────────────────────────────┘
+                                                    
+"
+`;

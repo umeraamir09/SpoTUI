@@ -1,0 +1,61 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`Phase 3 interaction frames offline stale playback promotes a visible error toast 1`] = `
+" SpoTUI ·                                                                                 
+                                                                            KEYS   THEME  
+──────────────────────────────────────────────────────────────────────────────────────────
+                                                                                          
+                                     CONNECTION ERROR                                     
+                                     Spotify is offline. Showing the last known           
+                                     playback state.                                      
+                                                                                          
+                                                                                          
+                                                                                          
+            .----------.                               Warm Receiver                      
+         .-'////////////'-.                     Signal Unit · Night Signals               
+       / //// //////// //// \\                 ┌───┐ ┌───┐ ┌─────┐ ┌───┐ ┌───┐             
+      | /////////.///////// |                 │ ⇄ │ │|◀ │ │  ▶  │ │▶| │ │ ↻ │             
+       \\ //// //////// //// /                 └───┘ └───┘ └─────┘ └───┘ └───┘             
+         '-.////////////.-'                                                               
+            '----------'                 1:04  ━━━━━━━━──────────────────────4:00         
+                                                                                          
+                                                           ┌─┐ ┌─┐ ┌─┐ ┌───┐              
+                                               VOLUME 68%  │-│ │M│ │+│ │DEV│              
+                                                           └─┘ └─┘ └─┘ └───┘              
+                                                                                          
+                                                                                          
+──────────────────────────────────────────────────────────────────────────────────────────
+ / search · u queue · b library · d device                      ◆ FOCUS TRANSPORT / STALE 
+                                                                                          
+"
+`;
+
+exports[`Phase 3 interaction frames device picker remains coherent as a focused modal surface 1`] = `
+"                                                                                          
+ SpoTUI ·                                                                                 
+   PLAYER   BROWSE   SEARCH   LIBRARY   QUEUE > DEVICES                                   
+──────────────────────────────────────────────────────────────────────────────────────────
+                                                                                          
+ ┌──────────────────────────────────────────────────────────────────────────────────────┐ 
+ │                                                                                      │ 
+ │                                                                            ┌───────┐ │ 
+ │ PLAYBACK DEVICES                                                           │REFRESH│ │ 
+ │                                                                            └───────┘ │ 
+ │ Up/Down select · Enter transfer · Shift+Enter transfer and play · Esc close          │ 
+ │ CHOOSE SPOTIFY DEVICE                                                                │ 
+ │ │ > Desk Speaker / speaker / ACTIVE                                                  │ 
+ │ │ Volume 68%                                                                         │ 
+ │ │                                                                                    │ 
+ │    Phone / smartphone                                                                │ 
+ │  Volume 42%                                                                          │ 
+ │                                                                                      │ 
+ │                                                                                      │ 
+ └──────────────────────────────────────────────────────────────────────────────────────┘ 
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+"
+`;
