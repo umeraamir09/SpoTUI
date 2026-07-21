@@ -29,7 +29,7 @@ for (const { name, target, ext } of targets) {
 
   const exit = await proc.exited
   if (exit !== 0) {
-    console.error(`Failed to build ${name} (exit code ${exit})`)
+    console.error(`Failed to build ${name} (exit code ${String(exit)})`)
     process.exit(exit)
   }
   console.log(`  Done: ${out}`)
