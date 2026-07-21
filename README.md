@@ -7,50 +7,6 @@ Spotify clients; it will not stream or decode Spotify audio.
 The working title is not final. `spotify-tui-plan.md` is the product and
 architecture source of truth.
 
-## Current status
-
-Phases 0 through 6 are implemented:
-
-- Bun + strict TypeScript project foundation
-- OpenTUI core, React, and keymap integration
-- alternate-screen renderer lifecycle with idempotent cleanup
-- named command routing with modal/input-safe quit behavior
-- four semantic theme presets plus validated custom JSON themes
-- large, medium, compact, and too-small shell layouts
-- OpenTUI character-frame snapshots at all required target sizes
-- bring-your-own Spotify Client ID onboarding
-- Authorization Code with PKCE and a state-validated loopback callback
-- refresh-token persistence behind a `SecretStore` abstraction using
-  `Bun.secrets`
-- typed, schema-validated Spotify requests with 401 recovery and
-  `Retry-After` handling
-- clear session restore, cancellation, denial, expiry, and re-login states
-- authoritative playback/device polling with focused/background cadences
-- smooth local progress interpolation between Spotify responses
-- play/pause, next/previous, seek, volume/mute, shuffle, and repeat controls
-- Spotify Connect device discovery, restriction explanations, and transfer
-- optimistic commands followed by an authoritative playback refresh
-- debounced track search with cancellation and stale-response protection
-- responsive search results with play-now, queue, like, playlist, and
-  open-in-Spotify actions
-- authoritative queue loading and refresh after successful queue additions
-- Spotify Library browsing for liked songs and private/public playlists
-- playlist item browsing, playlist-context playback, and add-to-playlist
-  selection
-- modular metadata, progress, transport, volume, device, and status components
-- Tab/Shift+Tab focus navigation with a persistent visible focus indicator
-- bounded, deduplicated, expiring command and error toasts
-- terminal capability-aware true-color, 256-color, and monochrome palettes
-- Unicode and fully ASCII-only interface modes
-- reusable, abortable worker-isolated JPEG/PNG album-art decoding
-- bounded decoded-image and transformed-frame LRU caches
-- responsive, rotating full-face vinyl art with a subtle center dot
-- visibility- and focus-aware animation scheduling with a bounded render rate
-- stable ASCII/no-art fallback modes that never block playback input
-- optional local `.lrc` overrides and LRCLIB lyrics lookup with cancellation
-- synced lyric highlighting driven by locally interpolated playback progress
-- lyrics, queue, info, and device context panels with keyboard shortcuts
-
 UmrooFM remains a Spotify Connect/Web API remote and does not stream audio.
 
 ## Spotify setup
