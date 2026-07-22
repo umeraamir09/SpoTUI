@@ -41,12 +41,12 @@ jobs:
         with:
           bun-version: latest
       - run: bun install --frozen-lockfile
-      - run: bun build --compile --target=${{ matrix.target }} ./src/index.tsx --outfile dist/umroofm-${{ matrix.name }}${{ matrix.ext }} --minify
+      - run: bun build --compile --target=${{ matrix.target }} ./src/index.tsx --outfile dist/spotui-${{ matrix.name }}${{ matrix.ext }} --minify
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: umroofm-${{ matrix.name }}
-          path: dist/umroofm-${{ matrix.name }}${{ matrix.ext }}
+          name: spotui-${{ matrix.name }}
+          path: dist/spotui-${{ matrix.name }}${{ matrix.ext }}
 
   checksums:
     needs: build
@@ -57,7 +57,7 @@ jobs:
           path: artifacts
       - run: |
           cd artifacts
-          sha256sum */umroofm-* > checksums.txt
+          sha256sum */spotui-* > checksums.txt
           cat checksums.txt
       - uses: actions/upload-artifact@v4
         with:
@@ -74,7 +74,7 @@ jobs:
       - name: Collect binaries
         run: |
           mkdir release-assets
-          find artifacts -type f \( -name "umroofm-*" -o -name "checksums.txt" \) -exec cp {} release-assets/ \;
+          find artifacts -type f \( -name "spotui-*" -o -name "checksums.txt" \) -exec cp {} release-assets/ \;
       - uses: softprops/action-gh-release@v2
         with:
           files: release-assets/*

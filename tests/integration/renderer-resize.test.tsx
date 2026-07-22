@@ -107,7 +107,7 @@ describe("responsive renderer", () => {
       const frame = harness.captureCharFrame()
       expect(frame).not.toContain("CHOOSE SPOTIFY DEVICE")
       expect(frame).toContain(
-        cycle % 2 === 0 ? "COMPACT LAYOUT" : "MEDIUM LAYOUT",
+        cycle % 2 === 0 ? "COMPACT VINYL" : "NOTHING PLAYING",
       )
     }
   })
