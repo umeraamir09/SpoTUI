@@ -1,6 +1,6 @@
 {
-  "name": "spotui",
-  "version": "0.1.0",
+  "name": "umroofm",
+  "version": "0.0.0",
   "type": "module",
   "description": "A warm retro terminal remote controller for Spotify Connect.",
   "bin": {
