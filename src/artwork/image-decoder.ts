@@ -1,3 +1,4 @@
+import { decodeImageBytes } from "./image-codecs"
 import type { DecodedImage } from "./types"
 
 interface DecodeSuccess {
@@ -134,6 +135,29 @@ export class WorkerImageDecoder implements ImageDecoder {
       pending.reject(error)
     }
     this.pending.clear()
+  }
+}
+
+export class SyncImageDecoder implements ImageDecoder {
+  decode(
+    bytes: Uint8Array,
+    mimeType: string | null,
+    signal?: AbortSignal,
+  ): Promise<DecodedImage> {
+    if (signal?.aborted === true) {
+      return Promise.reject(createAbortError())
+    }
+    try {
+      return Promise.resolve(decodeImageBytes(bytes, mimeType))
+    } catch (error) {
+      return Promise.reject(
+        error instanceof Error ? error : new Error(String(error)),
+      )
+    }
+  }
+
+  dispose(): void {
+    // no-op
   }
 }
 

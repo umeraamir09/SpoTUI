@@ -5,7 +5,7 @@ import {
   type SquareAlbumRasterOptions,
   type VinylRasterOptions,
 } from "./cell-rasterizer"
-import { WorkerImageDecoder } from "./image-decoder"
+import { SyncImageDecoder } from "./image-decoder"
 import type {
   ArtworkBytes,
   ArtworkFrame,
@@ -112,10 +112,10 @@ export class ArtworkService implements ArtworkControllerPort {
   }: ArtworkServiceOptions = {}) {
     this.fetchBytes = fetchBytes
     if (decode === undefined) {
-      const workerDecoder = new WorkerImageDecoder()
-      this.decode = workerDecoder.decode.bind(workerDecoder)
+      const syncDecoder = new SyncImageDecoder()
+      this.decode = syncDecoder.decode.bind(syncDecoder)
       this.disposeDecoder = () => {
-        workerDecoder.dispose()
+        syncDecoder.dispose()
       }
     } else {
       this.decode = decode

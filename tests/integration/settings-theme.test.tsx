@@ -45,7 +45,7 @@ describe("live theme settings", () => {
       harness.mockInput.pressKey(",")
     })
     await harness.renderOnce()
-    expect(harness.captureCharFrame()).toContain("THEME SETTINGS")
+    expect(harness.captureCharFrame()).toContain("PREVIEW UPDATES IMMEDIATELY")
 
     act(() => {
       harness.mockInput.pressArrow("down")
