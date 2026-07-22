@@ -1,10 +1,10 @@
 {
-  "name": "umroofm",
-  "version": "0.0.0",
+  "name": "spotui",
+  "version": "1.0.0",
   "type": "module",
   "description": "A warm retro terminal remote controller for Spotify Connect.",
   "bin": {
-    "umroofm": "./src/index.tsx"
+    "spotui": "./src/index.tsx"
   },
   "files": [
     "src/",
@@ -21,11 +21,11 @@
     "start": "bun src/index.tsx",
     "dev": "bun --watch src/index.tsx",
     "build": "bun run scripts/build.ts",
-    "build:win": "bun build --compile --target=bun-windows-x64 ./src/index.tsx --outfile dist/umroofm-win-x64 --minify",
-    "build:mac-arm": "bun build --compile --target=bun-darwin-arm64 ./src/index.tsx --outfile dist/umroofm-darwin-arm64 --minify",
-    "build:mac-x64": "bun build --compile --target=bun-darwin-x64 ./src/index.tsx --outfile dist/umroofm-darwin-x64 --minify",
-    "build:linux-x64": "bun build --compile --target=bun-linux-x64 ./src/index.tsx --outfile dist/umroofm-linux-x64 --minify",
-    "build:linux-arm64": "bun build --compile --target=bun-linux-arm64 ./src/index.tsx --outfile dist/umroofm-linux-arm64 --minify",
+    "build:win": "bun build --compile --target=bun-windows-x64 ./src/index.tsx --outfile dist/spotui-win-x64 --minify",
+    "build:mac-arm": "bun build --compile --target=bun-darwin-arm64 ./src/index.tsx --outfile dist/spotui-darwin-arm64 --minify",
+    "build:mac-x64": "bun build --compile --target=bun-darwin-x64 ./src/index.tsx --outfile dist/spotui-darwin-x64 --minify",
+    "build:linux-x64": "bun build --compile --target=bun-linux-x64 ./src/index.tsx --outfile dist/spotui-linux-x64 --minify",
+    "build:linux-arm64": "bun build --compile --target=bun-linux-arm64 ./src/index.tsx --outfile dist/spotui-linux-arm64 --minify",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --max-warnings 0",
     "test": "bun test",

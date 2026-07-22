@@ -29,7 +29,7 @@ export function getConfigDirectory({
 
   return join(
     environment.XDG_CONFIG_HOME ?? join(home, ".config"),
-    "umroofm",
+    "spotui",
   )
 }
 

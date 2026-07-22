@@ -12,7 +12,7 @@ const entry = "./src/index.tsx"
 await Bun.$`mkdir -p ${outDir}`.quiet()
 
 for (const { name, target, ext } of targets) {
-  const out = `${outDir}/umroofm-${name}${ext}`
+  const out = `${outDir}/spotui-${name}${ext}`
   console.log(`Building ${out} (${target})...`)
 
   const proc = Bun.spawn([

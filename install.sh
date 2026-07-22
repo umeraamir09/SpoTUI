@@ -1,47 +1,29 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO="umroo/umroofm"
+REPO="umeraamir09/SpoTUI"
 VERSION="${1:-latest}"
-INSTALL_DIR="${UMROOFM_INSTALL:-/usr/local/bin}"
+INSTALL_DIR="${SPOTUI_INSTALL:-/usr/local/bin}"
 
-detect_platform() {
-  local os arch
-  os="$(uname -s | tr '[:upper:]' '[:lower:]')"
-  arch="$(uname -m)"
+case "$(uname -sm)" in
+  "Linux x86_64")  platform="linux-x64"    ;;
+  "Linux aarch64") platform="linux-arm64"  ;;
+  "Darwin x86_64") platform="darwin-x64"  ;;
+  "Darwin arm64")  platform="darwin-arm64" ;;
+  *)               echo "Unsupported platform: $(uname -sm)"; exit 1 ;;
+esac
 
-  case "$os" in
-    linux) os="linux" ;;
-    darwin) os="darwin" ;;
-    *) echo "Unsupported OS: $os"; exit 1 ;;
-  esac
+if [ "$VERSION" = "latest" ]; then
+  url="https://github.com/${REPO}/releases/latest/download/spotui-${platform}"
+else
+  url="https://github.com/${REPO}/releases/download/${VERSION}/spotui-${platform}"
+fi
 
-  case "$arch" in
-    x86_64|amd64) arch="x64" ;;
-    aarch64|arm64) arch="arm64" ;;
-    *) echo "Unsupported arch: $arch"; exit 1 ;;
-  esac
+echo "Downloading spotui for ${platform}..."
+curl -fsSL "$url" -o spotui
+chmod +x spotui
 
-  echo "${os}-${arch}"
-}
+echo "Installing to ${INSTALL_DIR}/spotui..."
+mv spotui "$INSTALL_DIR/spotui"
 
-fetch() {
-  local platform="$1" url
-  if [ "$VERSION" = "latest" ]; then
-    url="https://github.com/${REPO}/releases/latest/download/umroofm-${platform}"
-  else
-    url="https://github.com/${REPO}/releases/download/${VERSION}/umroofm-${platform}"
-  fi
-
-  echo "Downloading umroofm for ${platform}..."
-  curl -fsSL "$url" -o umroofm
-  chmod +x umroofm
-}
-
-platform="$(detect_platform)"
-fetch "$platform"
-
-echo "Installing to ${INSTALL_DIR}/umroofm..."
-mv umroofm "$INSTALL_DIR/umroofm"
-
-echo "Installed! Run 'umroofm' to start."
+echo "Installed! Run 'spotui' to start."
