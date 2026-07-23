@@ -1,72 +1,104 @@
-# UmrooFM
+# SpoTUI
 
-UmrooFM is a keyboard-first terminal remote for Spotify Connect, designed around
-a warm retro music-appliance aesthetic. It will control playback on existing
-Spotify clients; it will not stream or decode Spotify audio.
+```powershell
+irm [github-release-url] | iex
+```
 
-The working title is not final. `spotify-tui-plan.md` is the product and
-architecture source of truth.
+Quick install (latest):
 
-UmrooFM remains a Spotify Connect/Web API remote and does not stream audio.
+```powershell
+irm https://raw.githubusercontent.com/umeraamir09/SpoTUI/main/install.ps1 | iex
+```
 
-## Spotify setup
+SpoTUI is a keyboard-first terminal remote for Spotify Connect. It controls playback on existing Spotify clients and does not stream audio.
 
-1. Create your own app in the Spotify Developer Dashboard. Under the current
-   Development Mode rules, the app owner needs Spotify Premium and can
-   allowlist up to five users.
-2. Register this redirect URI exactly:
+## Features
 
-   ```text
-   http://127.0.0.1/callback
-   ```
+- Spotify playback control from the terminal
+- Device transfer and queue management
+- Search tracks and add to queue
+- Browse liked songs and playlists
+- Optional synced lyrics panel
+- Theme presets and custom theme files
+- Keyboard and mouse support
 
-   Spotify permits a loopback IP registration without a port. UmrooFM binds an
-   available dynamic port and sends the resulting
-   `http://127.0.0.1:<port>/callback` URI in the authorization request.
-   `localhost` is never used.
-3. Start UmrooFM and paste your Client ID into the first-run screen. You can
-   instead set `SPOTIFY_CLIENT_ID` in the environment.
+## Requirements
 
-The Client ID is stored in the platform config directory. Refresh tokens are
-stored separately in the operating-system credential store; access tokens,
-refresh tokens, authorization codes, and authorization headers are never
-written to application logs.
+- [Bun](https://bun.sh/) >= 1.2.0
+- Spotify account (Premium required for Spotify Connect playback control)
+- Spotify app registered in the Spotify Developer Dashboard
 
-## Run
+## Spotify Configuration
 
-```sh
+1. Create an app in Spotify Developer Dashboard.
+2. Add this Redirect URI exactly:
+
+```text
+http://127.0.0.1/callback
+```
+
+3. Start SpoTUI and provide your Client ID, or set:
+
+```bash
+export SPOTIFY_CLIENT_ID="your_client_id"
+```
+
+The app stores non-secret config in the platform config directory and keeps refresh tokens in the OS credential store.
+
+## Installation
+
+### From source
+
+```bash
 bun install
 bun run start
 ```
 
-Artwork fallbacks can be selected at startup:
+### Script installers
 
-```sh
+- macOS/Linux:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/umeraamir09/SpoTUI/main/install.sh | bash
+```
+
+- Windows PowerShell:
+
+```powershell
+irm https://raw.githubusercontent.com/umeraamir09/SpoTUI/main/install.ps1 | iex
+```
+
+## Usage
+
+Run:
+
+```bash
+bun run start
+```
+
+Common runtime flags:
+
+```bash
 bun run start -- --no-animations
 bun run start -- --no-art
 bun run start -- --ascii
 bun run start -- --256-color
 bun run start -- --monochrome
-```
-
-Theme presets can be selected without changing source:
-
-```sh
 bun run start -- --theme warm-phosphor
 bun run start -- --theme midnight-blue
 bun run start -- --theme forest-terminal
 bun run start -- --theme rosewave
+bun run start -- --theme-file ./my-theme.json
 ```
 
-You can also change presets inside UmrooFM. Click `THEME` in the header or press
-`,` to open Theme Settings. Click `KEYS` in the player header to view the
-complete shortcut reference. Up/Down or `j`/`k` previews presets immediately;
-Enter or the `OK` button applies and saves the selection. Escape or `X` cancels
-and restores the previously applied theme.
+## Configuration
 
-For a custom theme, create a JSON file containing one or more semantic color
-overrides. Values must be six- or eight-digit hexadecimal colors; unknown
-tokens and malformed files are rejected before the terminal renderer starts.
+- `SPOTIFY_CLIENT_ID`: provides Client ID without entering it in the UI
+- `SPOTUI_INSTALL`: overrides installer destination path
+- `--theme <name>`: select a built-in theme preset
+- `--theme-file <path>`: load a custom JSON theme file
+
+Custom theme JSON example:
 
 ```json
 {
@@ -80,75 +112,28 @@ tokens and malformed files are rejected before the terminal renderer starts.
 }
 ```
 
-```sh
-bun run start -- --theme-file ./ocean-radio.json
-```
-
-Press `q` from an unfocused surface to quit. While entering a Client ID,
-keystrokes belong to the input and cannot trigger global quit. `Ctrl+C` always
-performs renderer cleanup, and `Escape` cancels an active authorization attempt.
-
-Player controls:
+## Key Controls
 
 - `Space`: play/pause
 - `n` / `p`: next/previous
-- `h` / `l` or Left/Right: seek 5 seconds
-- `H` / `L`: seek 30 seconds
+- `h` / `l` or Left/Right: seek 5s
 - `+` / `-`: volume
-- `m`: mute/restore
+- `m`: mute
 - `s`: shuffle
-- `r`: cycle repeat
-- `d`: choose or transfer Spotify Connect device
-- `y`: show/hide lyrics; Up/Down or `j`/`k` scroll manually (auto-follow resumes after a short pause)
-- `i`: show track information
-- `/`: search Spotify tracks
-- `u`: view and refresh the playback queue
-- `b`: browse liked songs and playlists
-- `Tab` / `Shift+Tab`: move focus through visible player regions
-
-Search controls:
-
-- type in the focused input; search starts after 300 ms of inactivity
-- `Down`: move from the input into results
-- `Up` / `Down` or `j` / `k`: select a result
-- `Enter` / `a`: add the selected result to the playback queue without
-  replacing the current Spotify context
-- `f`: save to Liked Songs
-- `v`: choose a playlist and add the track
-- `o`: open the result in Spotify
-- `PageUp` / `PageDown`: move through result pages
-- `/`: return focus to the search input
-
-Library controls:
-
-- `Left` / `Right`: switch between Liked Songs and Playlists
-- `Up` / `Down` or `j` / `k`: select an item
-- `Enter`: play a liked song, or open a playlist
-- `p`: play the selected song or full playlist
-- `a`: add a selected playlist track to the queue
-- `f`: save a selected playlist track
-- `Backspace`: return from playlist items to the Library root
-- `PageUp` / `PageDown`: move through library pages
-
-Phase 4 adds library and playlist OAuth permissions. An account authorized by
-an older build may need to be disconnected and authorized again before Spotify
-will grant the new scopes.
-
-Every visible player control also supports the mouse. Click transport, volume,
-mute, and device buttons directly; click or drag anywhere on the progress track
-to seek. Device rows can be hovered and clicked, and the picker has a clickable
-close button. Keyboard shortcuts remain active alongside mouse input.
+- `r`: repeat mode
+- `d`: device picker
+- `/`: search
+- `u`: queue
+- `b`: library
+- `q`: quit (when no input field is focused)
 
 ## Lyrics
 
-Lyrics are optional. When the lyrics panel is opened, UmrooFM first looks for a
-local `.lrc` file in its config-directory `lyrics` folder, named either with the
-Spotify track ID or its normalized `artist_title_album_duration` key. It then
-falls back to LRCLIB. Failed or missing lyrics never affect Spotify playback.
+When opened, SpoTUI checks local `.lrc` files in its config `lyrics` directory first, then falls back to LRCLIB. Lyrics failures do not impact playback.
 
-## Validate
+## Development
 
-```sh
+```bash
 bun run typecheck
 bun run lint
 bun run test:unit
@@ -157,31 +142,22 @@ bun run test:visual
 bun run validate
 ```
 
-The visual suite captures frames at `140×40`, `110×30`, `90×26`, `72×22`, and
-`52×16`. The hard minimum is `52×16`; smaller terminals receive a centered
-resize message.
+## Project Structure
 
-## Architecture boundary
+- `src/app` - app bootstrap and terminal lifecycle
+- `src/auth` - OAuth PKCE flow and token lifecycle
+- `src/config` - platform config paths and TOML config
+- `src/spotify` - Spotify Web API client and schemas
+- `src/playback` - playback state and command handling
+- `src/discovery` - search, queue, liked songs, playlists
+- `src/artwork` - artwork processing and rendering pipeline
+- `src/input` - command routing and keymap integration
+- `src/lyrics` - local and LRCLIB lyrics providers
+- `src/ui` - themed terminal UI components
+- `tests/unit` - unit tests
+- `tests/integration` - integration tests
+- `tests/visual` - visual regression tests
 
-- `src/app`: React root, bootstrap, terminal lifecycle, and fatal cleanup
-- `src/auth`: PKCE, callback server, controller, token lifecycle, and secret
-  storage boundary
-- `src/config`: platform paths and non-secret TOML configuration
-- `src/spotify`: typed Web API transport, schemas, and rate-limit errors
-- `src/playback`: observable playback controller, polling policy, progress
-  clock, optimistic commands, and domain models
-- `src/discovery`: observable search, queue, liked-song, and playlist state
-  with cancellation, paging, and post-command reconciliation
-- `src/artwork`: fetch limits, reusable worker decoding, bounded caches,
-  cooperative rasterization, visibility-aware rotation, and artwork domain state
-- `src/input`: named commands, pure command routing, and OpenTUI keymap adapter
-- `src/lyrics`: optional local LRC and LRCLIB providers, cache, cancellation, and sync timing
-- `src/ui`: semantic/capability-aware theme, responsive policy, modular shell
-  components, focus state, and transient notifications
-- `tests/unit`: pure state and lifecycle behavior
-- `tests/integration`: renderer, keymap, callback, auth, restart restore, and
-  Spotify transport behavior
-- `tests/visual`: character-frame and styled-span regression coverage
+## License
 
-Later phases must keep playback domain state, artwork work, and optional lyrics
-providers separate from auth, transport, input routing, and React rendering.
+MIT (see `LICENSE`).
