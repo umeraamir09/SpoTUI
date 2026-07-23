@@ -1,9 +1,5 @@
 # SpoTUI
 
-```powershell
-irm [github-release-url] | iex
-```
-
 Quick install (latest):
 
 ```powershell
