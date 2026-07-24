@@ -1,5 +1,7 @@
 # SpoTUI
 
+![Screenshot](./screenshot.png)
+
 Quick install (latest):
 
 ```powershell
