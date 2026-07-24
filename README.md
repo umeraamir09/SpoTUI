@@ -71,22 +71,22 @@ irm https://raw.githubusercontent.com/umeraamir09/SpoTUI/main/install.ps1 | iex
 Run:
 
 ```bash
-bun run start
+spotui
 ```
 
 Common runtime flags:
 
 ```bash
-bun run start -- --no-animations
-bun run start -- --no-art
-bun run start -- --ascii
-bun run start -- --256-color
-bun run start -- --monochrome
-bun run start -- --theme warm-phosphor
-bun run start -- --theme midnight-blue
-bun run start -- --theme forest-terminal
-bun run start -- --theme rosewave
-bun run start -- --theme-file ./my-theme.json
+spotui -- --no-animations
+spotui -- --no-art
+spotui -- --ascii
+spotui -- --256-color
+spotui -- --monochrome
+spotui -- --theme warm-phosphor
+spotui -- --theme midnight-blue
+spotui -- --theme forest-terminal
+spotui -- --theme rosewave
+spotui -- --theme-file ./my-theme.json
 ```
 
 ## Configuration
